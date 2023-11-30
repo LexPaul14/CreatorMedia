@@ -138,6 +138,41 @@
 		   text-align:center ; 
 		}
     </style>
+	<script>
+        function displayResume() {
+            // Replace 'path/to/resume/image.jpg' with the actual path to your resume image
+            var resumeImagePath = 'resume.jpg';
+
+            // Create an image element
+            var resumeImage = document.createElement('img');
+            resumeImage.src = resumeImagePath;
+
+            // Set the width and height of the image (adjust these values accordingly)
+            resumeImage.style.width = '800px';
+            resumeImage.style.height = 'auto'; // This maintains the aspect ratio
+
+            // Display the image in a modal (you can customize this part)
+            var modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.appendChild(resumeImage);
+
+            // Add the modal to the body
+            document.body.appendChild(modal);
+
+            // Add an event listener to close the modal when clicked
+            modal.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        }
+    </script>
 	<header>
         <img src="Creator Media Logo.svg">
         <nav>
@@ -174,6 +209,11 @@
 		<div class="content-card">
 			<iframe width="640" height="320" src="https://www.youtube.com/embed/QR8LxximqWI" title="5 MORE Editing Mistakes YouTubers Do That I Hate..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>	
     </div>
+	
+	<div ccass ="content-card">
+			<button onclick="displayResume()" class ="content-link">Check Resume</button>
+	</div>
+	</div>
 </div>
 </body>
 </html>
